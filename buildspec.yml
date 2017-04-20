@@ -1,14 +1,24 @@
 version: 0.1
 
 phases:
-  build:
+  install: 
+    commands:
+      - go get -u github.com/gorilla/mux
+      - go get -u github.com/golang/lint/golint
+
+  pre_build: 
     commands:
       - go version
-      - go get github.com/gorilla/mux
+      - golint -set_exit_status
+
+  build:
+    commands:
       - go build -v main.go 
+
   post_build:
     commands:
       - echo Build completed on `date`
+      
 artifacts:
   files:
     - rt_api_prototype
