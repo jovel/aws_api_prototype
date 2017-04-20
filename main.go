@@ -6,10 +6,12 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// GetMessages is for MakoAPI connection testing
 func GetMessages(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Messages!\n"))
 }
 
+// Healthcheck is for CloudWatch testing
 func Healthcheck(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("OK!\n"))
 }
