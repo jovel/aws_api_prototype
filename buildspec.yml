@@ -13,12 +13,12 @@ phases:
 
   build:
     commands:
-      - go build -v main.go 
+      - go build -v -o rt_api_prototype
 
   post_build:
     commands:
       - echo Build completed on `date`
-      
+
 artifacts:
   files:
     - rt_api_prototype
