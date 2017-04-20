@@ -1,0 +1,15 @@
+version: 0.1
+
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - go version
+      - echo Compiling the Go code...
+      - go build -v main.go 
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - rt_api_prototype
