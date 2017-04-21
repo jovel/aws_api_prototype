@@ -5,16 +5,18 @@ phases:
     commands:
       #- go get -u github.com/gorilla/mux
       - go get -u github.com/golang/lint/golint
+      - go get -u github.com/tools/godep
 
   pre_build: 
     commands:
       - go version
       - golint -set_exit_status
+      - godep restore
 
   build:
     commands:
       - echo $PWD
-      - go build -v -o rt_api_prototype 2> build.txt
+      - go build -v -o rt_api_prototype
 
   post_build:
     commands:
@@ -23,4 +25,3 @@ phases:
 artifacts:
   files:
     - rt_api_prototype
-    - build.txt
