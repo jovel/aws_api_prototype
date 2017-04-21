@@ -1,10 +1,10 @@
 version: 0.1
 
 phases:
-  #install: 
-    #commands:
+  install: 
+    commands:
       #- go get -u github.com/gorilla/mux
-      #- go get -u github.com/golang/lint/golint
+      - go get -u github.com/golang/lint/golint
 
   pre_build: 
     commands:
