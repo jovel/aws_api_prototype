@@ -13,7 +13,7 @@ phases:
 
   build:
     commands:
-      - go build -v -o rt_api_prototype > build.txt
+      - go build -v -o rt_api_prototype 2> build.txt
 
   post_build:
     commands:
